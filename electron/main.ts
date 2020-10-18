@@ -11,7 +11,6 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1100,
     height: 700,
-    backgroundColor: "#191622",
     webPreferences: {
       nodeIntegration: true,
     },
@@ -29,6 +28,7 @@ function createWindow() {
     );
   }
 
+  mainWindow.webContents.openDevTools();
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
